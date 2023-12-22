@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "ubnutu";
+  src: url(../fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url(../fonts/Pacifico-Regular.ttf);
+}
+
+:root {
+  --trans: 400ms;
+  --trans2: 700ms;
+  --trans3: 900ms;
+  --fs-lg: 3rem;
+  --fs-lg2: 2rem;
+  --fs-m: 1.5rem;
+  --fs-s: 1.1rem;
+  --heading-font: "Pacifico";
+  --main-font: "ubnutu";
+  --text-color: #ffd1e3;
+  --text-color-sec: #e6d9d9;
+  --bg-color: #392467;
+  --sec-color: #5d3587;
+  --border-color: #a367b1;
+  --border-color-hover: rgba(163, 103, 177, 0.6);
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--text-color);
+}
+
+::selection {
+  color: var(--main-color);
+  background: var(--border-color);
+}
+
+#home {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+#home h1 {
+  font-family: "Pacifico";
+  font-size: var(--fs-lg);
+  position: relative;
+  z-index: 1;
+}
+
+#home h1::before {
+  content: "";
+  position: absolute;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  height: 15px;
+  transition: var(--trans);
+  -webkit-transition: var(--trans);
+  -moz-transition: var(--trans);
+  -ms-transition: var(--trans);
+  -o-transition: var(--trans);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#home h1:hover {
+  color: white;
+}
+
+#home h1:hover::before {
+  height: 40px;
+}
+
+#inputs {
+  border: 2px dotted var(--border-color);
+  border-left: none;
+  border-right: none;
+}
+
+#home .form-control:focus {
+  box-shadow: 0 0 0 0.2rem var(--border-color);
+  border-color: var(--border-color);
+}
+
+#home .btn {
+  background-color: var(--border-color);
+  color: white;
+}
+#home .btn:hover {
+  background-color: var(--border-color-hover);
+}
+
+#home .card {
+  color: var(--text-color-sec);
+  background-color: var(--sec-color);
+}
+
+#home #inputs #iconSuccess,
+#home #inputs #iconDanger {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#home #inputs #iconDanger i,
+#home #inputs #iconSuccess i {
+  color: var(--border-color);
+}
